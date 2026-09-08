@@ -12,7 +12,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/IGAWorksDev/ap-APSSPSDK-SPM.git", from: "3.4.0"),
-        .package(url: "https://github.com/imobile/MaioSDK-v2-iOS.git", exact: "2.2.3"),
+        .package(url: "https://github.com/imobile/MaioSDK-v2-iOS.git", exact: "2.2.0"),
     ],
     targets: [
         .target(name: "APSSPMediationMaio",
