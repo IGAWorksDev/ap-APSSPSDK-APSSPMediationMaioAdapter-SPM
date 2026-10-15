@@ -12,12 +12,16 @@ import APSSPSDK
 
 final public class MaioRewardVideoAdapter: APSSPRewardVideoAdapterProtocol {
     
-    public var rootViewController: UIViewController?
+    public weak var rootViewController: UIViewController?
     
     private var maioMediationRewardVideoAd: MaioMediationRewardVideoAd?
     
-    public var delegate: APSSPRewardVideoAdapterDelegate?
+    public weak var delegate: APSSPRewardVideoAdapterDelegate?
     
+    deinit {
+        APLogger.debug("MaioRewardVideoAdapter deinit")
+    }
+
     public init(placementDic: [String: String], rootViewController: UIViewController?, info: [String : Any?]) {
         let zoneId = placementDic[APSSPPlacementKey.maioZoneId.rawValue] ?? ""
         self.rootViewController = rootViewController

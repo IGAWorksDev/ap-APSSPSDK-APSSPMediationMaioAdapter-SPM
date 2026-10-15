@@ -13,13 +13,13 @@ import Maio
 
 final class MaioMediationRewardVideoAd: NSObject {
     
-    var delegate: APSSPRewardVideoAdapterDelegate?
+    weak var delegate: APSSPRewardVideoAdapterDelegate?
     
     private var rewardedAd: MaioRewarded?
     
     private let zoneId: String
     
-    private let rootViewController: UIViewController?
+    private weak var rootViewController: UIViewController?
     
     
     init(zoneId: String, rootViewController: UIViewController?) {

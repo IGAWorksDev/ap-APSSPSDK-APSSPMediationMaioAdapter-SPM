@@ -13,13 +13,13 @@ import Maio
 
 final class MaioMediationInterstitialVideoAd: NSObject {
     
-    var delegate: APSSPInterstitialVideoAdapterDelegate?
+    weak var delegate: APSSPInterstitialVideoAdapterDelegate?
     
     private var interstitialAd: MaioInterstitial?
     
     private let zoneId: String
     
-    private let rootViewController: UIViewController?
+    private weak var rootViewController: UIViewController?
     
     
     init(zoneId: String, rootViewController: UIViewController?) {

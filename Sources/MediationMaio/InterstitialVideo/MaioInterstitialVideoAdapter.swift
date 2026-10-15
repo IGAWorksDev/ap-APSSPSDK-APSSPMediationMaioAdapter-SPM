@@ -14,10 +14,14 @@ final public class MaioInterstitialVideoAdapter: APSSPInterstitialVideoAdapterPr
     
     private var maioMediationInterstitialVideoAd: MaioMediationInterstitialVideoAd?
     
-    public var delegate: APSSPInterstitialVideoAdapterDelegate?
+    public weak var delegate: APSSPInterstitialVideoAdapterDelegate?
     
-    public var rootViewController: UIViewController?
+    public weak var rootViewController: UIViewController?
     
+    deinit {
+        APLogger.debug("MaioInterstitialVideoAdapter deinit")
+    }
+
     public init(placementDic: [String: String], rootViewController: UIViewController?, info: [String : Any?]) {
         let zoneId = placementDic[APSSPPlacementKey.maioZoneId.rawValue] ?? ""
         self.rootViewController = rootViewController
